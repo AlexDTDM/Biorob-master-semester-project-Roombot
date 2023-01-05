@@ -1,0 +1,13 @@
+<package>
+  <name>roombot_description</name>
+  <version>1.0.4</version>
+  <description>Description package for the Roombot robot</description>
+  <author>Anastasia Bolotnikova</author>
+  <maintainer email="anastasia.bolotnikova@epfl.ch">Anastasia Bolotnikova</maintainer>
+  <license>BSD</license>
+  <url>https://gite.tba</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
+
+

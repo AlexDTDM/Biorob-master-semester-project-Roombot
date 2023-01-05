@@ -1,0 +1,407 @@
+<?xml version="1.0" ?>
+<robot name="Roombot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+
+  <link name="base_link"/>
+
+  <!-- Hemisphere links -->
+
+  <link name="HS1">
+    <inertial>
+      <origin xyz="0.00873494 0.01514450 0.04269005"/>
+      <mass value="0.40000000"/>
+      <inertia ixx="0.00045793" ixy="0.00006288" ixz="-0.00005133" iyy="0.00053053" iyz="-0.00008891" izz="0.00049421"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="/Users/alexandredemontleau/Desktop/BIOROB_projet/kinematics/roombot_description/meshes/HS1.stl"/>
+      </geometry>
+      <material name="White">
+        <color rgba="0.9 0.9 0.9 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base" type="fixed">
+    <parent link="base_link"/>
+    <child link="HS1"/>
+    <origin rpy="0 0 -0.2617994" xyz="0 0 0"/>
+  </joint>
+
+  <link name="HS2">
+    <inertial>
+      <origin xyz="-0.00015952 0.00000004 0.02099685"/>
+      <mass value="0.60200000"/>
+      <inertia ixx="0.00059987" ixy="-0.00000000" ixz="-0.00000003" iyy="0.00059571" iyz="0.00000000" izz="0.00092737"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="/Users/alexandredemontleau/Desktop/BIOROB_projet/kinematics/roombot_description/meshes/HS2.stl"/>
+      </geometry>
+      <material name="Black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="HS3">
+    <inertial>
+      <origin xyz="0.01820046 0.00000554 0.03993060"/>
+      <mass value="0.35900000"/>
+      <inertia ixx="0.00050394" ixy="0.00000000" ixz="-0.00009891" iyy="0.00038177" iyz="0.00000000" izz="0.00042528"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="/Users/alexandredemontleau/Desktop/BIOROB_projet/kinematics/roombot_description/meshes/HS3.stl"/>
+      </geometry>
+      <material name="White">
+        <color rgba="0.9 0.9 0.9 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="HS4">
+    <inertial>
+      <origin xyz="-0.00000031 0.00000067 0.02126832"/>
+      <mass value="0.39900000"/>
+      <inertia ixx="0.00042057" ixy="0.00000000" ixz="0.00000000" iyy="0.00042056" iyz="-0.00000000" izz="0.00063783"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="/Users/alexandredemontleau/Desktop/BIOROB_projet/kinematics/roombot_description/meshes/HS4.stl"/>
+      </geometry>
+      <material name="Black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- ACM latch links
+
+  <link name="latch1ACM0">
+    <visual>
+      <geometry>
+          <mesh filename="package://roombot_description/meshes/latch.stl"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+  </link>
+
+  <link name="latch2ACM0">
+    <visual>
+      <geometry>
+          <mesh filename="package://roombot_description/meshes/latch.stl"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+  </link>
+
+  <link name="latch3ACM0">
+    <visual>
+      <geometry>
+          <mesh filename="package://roombot_description/meshes/latch.stl"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+  </link>
+
+  <link name="latch4ACM0">
+    <visual>
+      <geometry>
+          <mesh filename="package://roombot_description/meshes/latch.stl"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+  </link>
+
+  <link name="latch1ACM1">
+    <visual>
+      <geometry>
+          <mesh filename="package://roombot_description/meshes/latch.stl"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+  </link>
+
+  <link name="latch2ACM1">
+    <visual>
+      <geometry>
+          <mesh filename="package://roombot_description/meshes/latch.stl"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+  </link>
+
+  <link name="latch3ACM1">
+    <visual>
+      <geometry>
+          <mesh filename="package://roombot_description/meshes/latch.stl"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+  </link>
+
+  <link name="latch4ACM1">
+    <visual>
+      <geometry>
+          <mesh filename="package://roombot_description/meshes/latch.stl"/>
+      </geometry>
+      <material name="Black"/>
+    </visual>
+  </link> -->
+
+  <!-- 3 main joints -->
+
+  <link name="preM0" />
+  <joint name="prem0" type="fixed">
+    <parent link="HS1"/>
+    <child link="preM0"/>
+    <origin rpy="0 -0.959931 1.0472" xyz="0 0 0.055"/>
+  </joint>
+
+  <joint name="M0" type="continuous">
+    <parent link="HS1"/>
+    <child link="HS2"/>
+    <origin rpy="0 -0.959931 1.0472" xyz="0 0 0.055"/>
+    <axis xyz="0.0 0.0 -1.0"/>
+    <limit effort="8.4" velocity="10"/>
+  </joint>
+
+  <link name="preM1" />
+  <joint name="prem1" type="fixed">
+    <parent link="HS2"/>
+    <child link="preM1"/>
+    <origin rpy="0 0.959931 0" xyz="0 0 0"/>
+  </joint>
+
+  <joint name="M1" type="continuous">
+    <parent link="preM1"/>
+    <child link="HS3"/>
+    <origin rpy="0 0 0" xyz="0 0 0.055"/>
+    <axis xyz="0.0 0.0 -1.0"/>
+    <limit effort="4.3" velocity="10"/>
+  </joint>
+
+  <link name="preM2" />
+  <joint name="prem2" type="fixed">
+    <parent link="HS3"/>
+    <child link="preM2"/>
+    <origin rpy="0 -0.959931 0" xyz="0 0 0.055"/>
+  </joint>
+
+  <joint name="M2" type="continuous">
+    <parent link="HS3"/>
+    <child link="HS4"/>
+    <origin rpy="0 -0.959931 0" xyz="0 0 0.055"/>
+    <axis xyz="0.0 0.0 -1.0"/>
+    <limit effort="8.4" velocity="10"/>
+  </joint>
+
+  <!--  2 ACM joints -->
+
+  <!-- <link name="acm0" />
+  <joint name="X0" type="revolute">
+    <parent link="HS1"/>
+    <child link="acm0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="1.0 0 0"/>
+    <limit effort="1" lower="0" upper="1" velocity="0.3"/>
+  </joint> -->
+
+  <link name="acm0Frame" />
+  <joint name="acm0frame" type="fixed">
+    <parent link="HS1"/>
+    <child link="acm0Frame"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="acm0turned" />
+  <joint name="acm0Turn" type="fixed">
+    <parent link="HS1"/>
+    <child link="acm0turned"/>
+    <origin rpy="0 0 0.2617994" xyz="0 0 0"/>
+  </joint>
+
+  <link name="cp0Frame" />
+  <joint name="cp0Joint" type="fixed">
+    <parent link="acm0turned"/>
+    <child link="cp0Frame"/>
+    <origin rpy="-1.570796 -1.8325957 0" xyz="0 0.055 0.055"/>
+  </joint>
+
+  <link name="cp1Frame" />
+  <joint name="cp1Joint" type="fixed">
+    <parent link="acm0turned"/>
+    <child link="cp1Frame"/>
+    <origin rpy="-1.570796 0 -1.570796" xyz="0.055 0 0.055"/>
+  </joint>
+
+  <!-- <link name="acm1" />
+  <joint name="X1" type="revolute">
+    <parent link="HS4"/>
+    <child link="acm1"/>
+    <origin rpy="0 0.959931 0" xyz="0 0 0"/>
+    <axis xyz="1.0 0 0"/>
+    <limit effort="1" lower="0" upper="1" velocity="0.3"/>
+  </joint> -->
+
+
+  <link name="acm1turned" />
+  <joint name="acm1Turn" type="fixed">
+    <parent link="acm1Fixed"/>
+    <child link="acm1turned"/>
+    <origin rpy="0 0 0.785398" xyz="0 0 0"/>
+  </joint>
+
+  <link name="cp2Frame" />
+  <joint name="cp2Joint" type="fixed">
+    <parent link="acm1turned"/>
+    <child link="cp2Frame"/>
+    <origin rpy="-1.570796 0 0" xyz="0 0.055 0"/>
+  </joint>
+
+  <link name="cp3Frame" />
+  <joint name="cp3Joint" type="fixed">
+    <parent link="acm1turned"/>
+    <child link="cp3Frame"/>
+    <origin rpy="3.14159 1.570796 0" xyz="-0.055 0 0"/>
+  </joint>
+
+  <!-- ACM0 mimic joints
+
+  <joint name="latchJoint01" type="continuous">
+    <parent link="HS1"/>
+    <child link="latch1ACM0"/>
+    <origin rpy="-0.1465655 3.14159 0" xyz="0 -0.024 0.0045"/>
+    <axis xyz="-1.0 0 0"/>
+    <mimic joint="X0" multiplier="2.13" offset="0"/>
+  </joint>
+
+  <joint name="latchJoint02" type="continuous">
+    <parent link="HS1"/>
+    <child link="latch2ACM0"/>
+    <origin rpy="-0.1465655 3.14159 3.14159" xyz="0 0.024 0.0045"/>
+    <axis xyz="-1.0 0 0"/>
+    <mimic joint="X0" multiplier="2.13" offset="0"/>
+  </joint>
+
+  <joint name="latchJoint03" type="continuous">
+    <parent link="HS1"/>
+    <child link="latch3ACM0"/>
+    <origin rpy="-0.1465655 3.14159 1.57" xyz="0.024 0 0.0045"/>
+    <axis xyz="-1.0 0 0"/>
+    <mimic joint="X0" multiplier="2.13" offset="0"/>
+  </joint>
+
+  <joint name="latchJoint04" type="continuous">
+    <parent link="HS1"/>
+    <child link="latch4ACM0"/>
+    <origin rpy="-0.1465655 3.14159 -1.57" xyz="-0.024 0 0.0045"/>
+    <axis xyz="-1.0 0 0"/>
+    <mimic joint="X0" multiplier="2.13" offset="0"/>
+  </joint> -->
+
+  <!-- ACM1 mimic joints
+
+
+
+  <joint name="latchJoint11" type="continuous">
+    <parent link="acm1Frame"/>
+    <child link="latch1ACM1"/>
+    <origin rpy="-0.1465655 3.14159 0" xyz="0 -0.024 0.0045"/>
+    <axis xyz="-1.0 0 0"/>
+    <mimic joint="X1" multiplier="2.13" offset="0"/>
+  </joint>
+
+  <joint name="latchJoint12" type="continuous">
+    <parent link="acm1Frame"/>
+    <child link="latch2ACM1"/>
+    <origin rpy="-0.1465655 3.14159 3.14159" xyz="0 0.024 0.0045"/>
+    <axis xyz="-1.0 0 0"/>
+    <mimic joint="X1" multiplier="2.13" offset="0"/>
+  </joint>
+
+  <joint name="latchJoint13" type="continuous">
+    <parent link="acm1Frame"/>
+    <child link="latch3ACM1"/>
+    <origin rpy="-0.1465655 3.14159 1.57" xyz="0.024 0 0.0045"/>
+    <axis xyz="-1.0 0 0"/>
+    <mimic joint="X1" multiplier="2.13" offset="0"/>
+  </joint>
+
+  <joint name="latchJoint14" type="continuous">
+    <parent link="acm1Frame"/>
+    <child link="latch4ACM1"/>
+    <origin rpy="-0.1465655 3.14159 -1.57" xyz="-0.024 0 0.0045"/>
+    <axis xyz="-1.0 0 0"/>
+    <mimic joint="X1" multiplier="2.13" offset="0"/>
+  </joint> -->
+
+  <link name="acm1Fixed" />
+  <joint name="latchJoint1" type="fixed">
+    <parent link="HS4"/>
+    <child link="acm1Fixed"/>
+    <origin rpy="0 0.959931 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="acm1Frame" />
+  <joint name="latchJoint2" type="fixed">
+    <parent link="acm1Fixed"/>
+    <child link="acm1Frame"/>
+    <origin rpy="3.14159 0 1.047198" xyz="0 0 0.055"/>
+  </joint>
+
+  <link name="acm1aligned" />
+  <joint name="acm1ali" type="fixed">
+    <parent link="acm1Frame"/>
+    <child link="acm1aligned"/>
+    <origin rpy="0 0 1.832596" xyz="0 0 0"/>
+  </joint>
+
+  <link name="HS2turned" />
+  <joint name="HS2Turn" type="fixed">
+    <parent link="HS2"/>
+    <child link="HS2turned"/>
+    <origin rpy="0 0.959931 0" xyz="0 0 0"/>
+  </joint>
+  <link name="HS2turnedagain" />
+  <joint name="HS2Turnagain" type="fixed">
+    <parent link="HS2turned"/>
+    <child link="HS2turnedagain"/>
+    <origin rpy="0 0 0.785398" xyz="0 0 0"/>
+  </joint>
+  <link name="cp4Frame" />
+  <joint name="cp4Joint" type="fixed">
+    <parent link="HS2turnedagain"/>
+    <child link="cp4Frame"/>
+    <origin rpy="-1.570796 0 0" xyz="0 0.055 0"/>
+  </joint>
+
+  <link name="cp5Frame" />
+  <joint name="cp5Joint" type="fixed">
+    <parent link="HS2turnedagain"/>
+    <child link="cp5Frame"/>
+    <origin rpy="0 -1.570796 0" xyz="-0.055 0 0"/>
+  </joint>
+  <link name="HS3turned" />
+  <joint name="HS3Turn" type="fixed">
+    <parent link="HS3"/>
+    <child link="HS3turned"/>
+    <origin rpy="0 0 0.785398" xyz="0 0 0.055"/>
+  </joint>
+    <link name="cp6Frame" />
+  <joint name="cp6Joint" type="fixed">
+    <parent link="HS3turned"/>
+    <child link="cp6Frame"/>
+    <origin rpy="1.570796 0 0" xyz="0 -0.055 0"/>
+  </joint>
+
+  <link name="cp7Frame" />
+  <joint name="cp7Joint" type="fixed">
+    <parent link="HS3turned"/>
+    <child link="cp7Frame"/>
+    <origin rpy="0 1.570796 0" xyz="0.055 0 0"/>
+  </joint>
+
+</robot>

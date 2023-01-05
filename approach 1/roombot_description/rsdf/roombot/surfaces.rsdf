@@ -1,0 +1,111 @@
+<robot name="roombot">
+
+  <planar_surface name="ACM0" link="acm0Frame">
+    <origin xyz="0 0 0" rpy="0 0 0.7853982" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+  <planar_surface name="CP0" link="cp0Frame">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+  <planar_surface name="CP1" link="cp1Frame">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+  <planar_surface name="CP4" link="cp4Frame">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+  <planar_surface name="CP5" link="cp5Frame">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+  <planar_surface name="ACM1" link="acm1Frame">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+  <planar_surface name="CP2" link="cp2Frame">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+  <planar_surface name="CP3" link="cp3Frame">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+    <planar_surface name="CP6" link="cp6Frame">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+  <planar_surface name="CP7" link="cp7Frame">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <points>
+      <point xy="0.02 0.02" />
+      <point xy="-0.02 0.02" />
+      <point xy="-0.02 -0.02" />
+      <point xy="0.02 -0.02" />
+    </points>
+    <material name="plastic" />
+  </planar_surface>
+
+</robot>
